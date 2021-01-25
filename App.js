@@ -3,6 +3,8 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 const App = () => {
+  console.log("App started");
+
   return (
     <View style={styles.container}>
       <Text>Hello React Native</Text>
@@ -16,8 +18,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
-  }
+    justifyContent: "center",
+  },
 });
 
 export default App;
