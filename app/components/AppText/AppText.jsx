@@ -1,10 +1,18 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, StyleSheet } from "react-native";
 
-import styles from "./styles";
+import colors from "../../config/colors";
 
-const AppText = ({ children }) => {
-  return <Text style={styles.text}>{children}</Text>;
+const AppText = ({ children, style }) => {
+  return <Text style={[styles.text, style]}>{children}</Text>;
 };
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 25,
+    fontFamily: "Avenir",
+    color: colors.darkGrey,
+  },
+});
 
 export default AppText;
