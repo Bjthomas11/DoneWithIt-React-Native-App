@@ -1,21 +1,5 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  TouchableHighlight,
-  Button,
-  Alert,
-  Platform,
-  StatusBar,
-  Dimensions,
-} from "react-native";
-import {
-  useDimensions,
-  useDeviceOrientation,
-} from "@react-native-community/hooks";
+import { View } from "react-native";
 
 const App = () => {
   return (
@@ -26,6 +10,8 @@ const App = () => {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
+        flexWrap: "wrap",
+        alignContent: "center",
       }}
     >
       <View
@@ -33,13 +19,41 @@ const App = () => {
           backgroundColor: "dodgerblue",
           width: 100,
           height: 300,
-          alignSelf: "flex-start",
         }}
       />
-      <View style={{ backgroundColor: "gold", width: 100, height: 200 }} />
+      <View style={{ backgroundColor: "gold", width: 100, height: 100 }} />
       <View
         style={{
           backgroundColor: "red",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "green",
+          width: 100,
+          height: 100,
+        }}
+      />
+
+      <View
+        style={{
+          backgroundColor: "grey",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "pink",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "yellow",
           width: 100,
           height: 100,
         }}
