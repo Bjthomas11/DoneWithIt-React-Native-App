@@ -8,18 +8,16 @@ const ViewImageScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <MaterialCommunityIcons
-          name="close"
-          size={24}
-          color="#fff"
-          style={styles.closeIcon}
-        />
-        <MaterialCommunityIcons
-          name="trash-can-outline"
-          size={24}
-          color="#fff"
-          style={styles.deleteIcon}
-        />
+        <View style={styles.closeIcon}>
+          <MaterialCommunityIcons name="close" size={35} color={colors.white} />
+        </View>
+        <View style={styles.deleteIcon}>
+          <MaterialCommunityIcons
+            name="trash-can-outline"
+            size={35}
+            color={colors.white}
+          />
+        </View>
       </View>
 
       <Image
@@ -47,15 +45,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   closeIcon: {
-    width: 50,
-    height: 50,
     position: "absolute",
     top: 40,
     left: 30,
   },
   deleteIcon: {
-    width: 50,
-    height: 50,
     position: "absolute",
     top: 40,
     right: 30,
