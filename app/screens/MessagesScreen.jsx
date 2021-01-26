@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 
 import AppListItem from "../components/AppListItem/AppListItem";
 import AppScreen from "../components/AppScreen/AppScreen";
+import ListItemDeleteAction from "../components/ListItemDeleteAction/ListItemDeleteAction";
 import ListItemSeperator from "../components/ListItemSeperator/ListItemSeperator";
 
-const messages = [
+const initialMessages = [
   {
     id: 1,
     title: "title",
@@ -21,6 +22,15 @@ const messages = [
 ];
 
 const MessagesScreen = () => {
+  const [messages, setMessages] = useState(initialMessages);
+  const handleDelete = (message) => {
+    // Delete the message from messages
+    const newMessages = messages.filter((msg) => msg.id !== message.id);
+
+    setMessages(newMessages);
+    // TODO Call the server to delete from backend
+  };
+
   return (
     <AppScreen>
       <FlatList
@@ -31,6 +41,10 @@ const MessagesScreen = () => {
             title={item.title}
             subTitle={item.description}
             image={item.image}
+            onPress={() => console.log("", item)}
+            renderRightActions={() => (
+              <ListItemDeleteAction onPress={() => handleDelete(item)} />
+            )}
           />
         )}
         ItemSeparatorComponent={ListItemSeperator}
