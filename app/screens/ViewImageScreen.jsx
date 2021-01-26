@@ -1,6 +1,8 @@
 import React from "react";
 import { Image, SafeAreaView, StyleSheet, View } from "react-native";
 
+import colors from "../config/colors";
+
 const ViewImageScreen = () => {
   return (
     <View style={styles.container}>
@@ -20,7 +22,7 @@ const ViewImageScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#333",
+    backgroundColor: colors.darkGrey,
     flex: 1
   },
   image: {
@@ -34,7 +36,7 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   closeIcon: {
-    backgroundColor: "#fc5c65",
+    backgroundColor: colors.primaryColor,
     width: 50,
     height: 50,
     position: "absolute",
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
     left: 30
   },
   deleteIcon: {
-    backgroundColor: "#4ECDC4",
+    backgroundColor: colors.secondaryColor,
     width: 50,
     height: 50,
     position: "absolute",

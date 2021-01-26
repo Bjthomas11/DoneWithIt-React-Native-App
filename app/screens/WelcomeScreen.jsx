@@ -8,6 +8,8 @@ import {
   Text
 } from "react-native";
 
+import colors from "../config/colors";
+
 const WelcomeScreen = () => {
   return (
     <ImageBackground
@@ -35,12 +37,12 @@ const styles = StyleSheet.create({
   loginBtn: {
     width: "100%",
     height: 70,
-    backgroundColor: "#fc5c65"
+    backgroundColor: colors.primaryColor
   },
   registertBtn: {
     width: "100%",
     height: 70,
-    backgroundColor: "#4ECDC4"
+    backgroundColor: colors.secondaryColor
   },
   logoContainer: {
     position: "absolute",
