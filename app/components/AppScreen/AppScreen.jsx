@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
   screen: {
     // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : "",
     paddingTop: Constants.statusBarHeight,
+    flex: 1,
   },
 });
 
