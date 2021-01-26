@@ -8,7 +8,6 @@ import {
   Text,
 } from "react-native";
 import AppButton from "../components/AppButton/AppButton";
-import ButtonComponent from "../components/Button/Button";
 
 import colors from "../config/colors";
 
