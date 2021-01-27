@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { View, StyleSheet, Text, TextInput, Switch } from "react-native";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
-
 import AppText from "./app/components/AppText/AppText";
 import AppButton from "./app/components/AppButton/AppButton";
 import AppCard from "./app/components/AppCard/AppCard";
@@ -14,13 +13,19 @@ import AppIcon from "./app/components/AppIcon/AppIcon";
 import AppListItem from "./app/components/AppListItem/AppListItem";
 import ListingScreen from "./app/screens/ListingScreen";
 import AppTextInput from "./app/components/AppTextInput/AppTextInput";
+import AppPicker from "./app/components/AppPicker/AppPicker";
 
 const App = () => {
   // const [isNew, setIsNew] = useState(false);
   {
     /* <Switch value={isNew} onValueChange={(value) => setIsNew(value)} /> */
   }
-  return <AppScreen></AppScreen>;
+  return (
+    <AppScreen>
+      <AppPicker placeholder="test" icon="apps" />
+      <AppTextInput placeholder="test" icon="email" />
+    </AppScreen>
+  );
 };
 
 export default App;
