@@ -12,9 +12,10 @@ import MyAccountScreen from "./app/screens/MyAccountScreen";
 import AppScreen from "./app/components/AppScreen/AppScreen";
 import AppIcon from "./app/components/AppIcon/AppIcon";
 import AppListItem from "./app/components/AppListItem/AppListItem";
+import ListingScreen from "./app/screens/ListingScreen";
 
 const App = () => {
-  return <MyAccountScreen />;
+  return <ListingScreen />;
 };
 
 export default App;

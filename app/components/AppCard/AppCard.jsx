@@ -18,10 +18,10 @@ const AppCard = ({ title, subTitle, image }) => {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 20,
     backgroundColor: colors.white,
     marginBottom: 20,
     overflow: "hidden",
+    borderRadius: 20,
   },
   image: {
     width: "100%",
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginBottom: 8,
+    fontWeight: "600",
   },
   subTitle: {
     color: colors.secondaryColor,
