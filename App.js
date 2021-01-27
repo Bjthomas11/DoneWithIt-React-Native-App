@@ -14,40 +14,41 @@ import AppListItem from "./app/components/AppListItem/AppListItem";
 import ListingScreen from "./app/screens/ListingScreen";
 import AppTextInput from "./app/components/AppTextInput/AppTextInput";
 import AppPicker from "./app/components/AppPicker/AppPicker";
+import LoginScreen from "./app/screens/LoginScreen";
 
-const itemsData = [
-  {
-    label: "Furniture",
-    value: 1,
-  },
-  {
-    label: "Clothing",
-    value: 2,
-  },
-  {
-    label: "Cameras",
-    value: 3,
-  },
-];
+// const itemsData = [
+//   {
+//     label: "Furniture",
+//     value: 1,
+//   },
+//   {
+//     label: "Clothing",
+//     value: 2,
+//   },
+//   {
+//     label: "Cameras",
+//     value: 3,
+//   },
+// ];
 
 const App = () => {
-  const [cat, setCat] = useState(itemsData[0]);
+  // const [cat, setCat] = useState(itemsData[0]);
   // const [isNew, setIsNew] = useState(false);
   {
     /* <Switch value={isNew} onValueChange={(value) => setIsNew(value)} /> */
   }
-  return (
-    <AppScreen>
-      {/* <AppPicker
+
+  {
+    /* <AppPicker
         selectedItem={cat}
         onSelectItem={(item) => setCat(item)}
         placeholder="test"
         icon="apps"
         items={itemsData}
       />
-      <AppTextInput placeholder="test" icon="email" /> */}
-    </AppScreen>
-  );
+      <AppTextInput placeholder="test" icon="email" /> */
+  }
+  return <LoginScreen />;
 };
 
 export default App;
