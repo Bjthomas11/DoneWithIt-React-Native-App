@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TextInput } from "react-native";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 
@@ -13,9 +13,14 @@ import AppScreen from "./app/components/AppScreen/AppScreen";
 import AppIcon from "./app/components/AppIcon/AppIcon";
 import AppListItem from "./app/components/AppListItem/AppListItem";
 import ListingScreen from "./app/screens/ListingScreen";
+import AppTextInput from "./app/components/AppTextInput/AppTextInput";
 
 const App = () => {
-  return <ListingScreen />;
+  return (
+    <AppScreen>
+      <AppTextInput icon="email" placeholder="Email" />
+    </AppScreen>
+  );
 };
 
 export default App;
