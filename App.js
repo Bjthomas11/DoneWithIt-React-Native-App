@@ -15,15 +15,37 @@ import ListingScreen from "./app/screens/ListingScreen";
 import AppTextInput from "./app/components/AppTextInput/AppTextInput";
 import AppPicker from "./app/components/AppPicker/AppPicker";
 
+const itemsData = [
+  {
+    label: "Furniture",
+    value: 1,
+  },
+  {
+    label: "Clothing",
+    value: 2,
+  },
+  {
+    label: "Cameras",
+    value: 3,
+  },
+];
+
 const App = () => {
+  const [cat, setCat] = useState(itemsData[0]);
   // const [isNew, setIsNew] = useState(false);
   {
     /* <Switch value={isNew} onValueChange={(value) => setIsNew(value)} /> */
   }
   return (
     <AppScreen>
-      <AppPicker placeholder="test" icon="apps" />
-      <AppTextInput placeholder="test" icon="email" />
+      {/* <AppPicker
+        selectedItem={cat}
+        onSelectItem={(item) => setCat(item)}
+        placeholder="test"
+        icon="apps"
+        items={itemsData}
+      />
+      <AppTextInput placeholder="test" icon="email" /> */}
     </AppScreen>
   );
 };
