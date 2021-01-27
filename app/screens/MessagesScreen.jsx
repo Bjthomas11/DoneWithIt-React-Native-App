@@ -53,9 +53,9 @@ const MessagesScreen = () => {
         onRefresh={() => {
           setMessages([
             {
-              id: 1,
-              title: "title",
-              description: "desc",
+              id: 2,
+              title: "title 2",
+              description: "desc 2",
               image: require("../assets/brian.jpg"),
             },
           ]);

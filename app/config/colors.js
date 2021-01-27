@@ -6,4 +6,5 @@ export default {
   lightGrey: "#ddd",
   white: "#fff",
   danger: "#fc6767",
+  logout: "#ffe66d",
 };

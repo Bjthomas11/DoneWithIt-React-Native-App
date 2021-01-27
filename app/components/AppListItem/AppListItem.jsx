@@ -9,6 +9,7 @@ import {
 import Swipeable from "react-native-gesture-handler/Swipeable";
 
 import colors from "../../config/colors";
+import AppIcon from "../AppIcon/AppIcon";
 
 const AppListItem = ({
   title,
@@ -16,15 +17,26 @@ const AppListItem = ({
   image,
   onPress,
   renderRightActions,
+  IconComponent,
+  backgroundColor = "#fff",
 }) => {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight onPress={onPress} underlayColor={colors.lightGrey}>
-        <View style={styles.container}>
-          <Image style={styles.image} source={image} />
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            padding: 20,
+            backgroundColor: backgroundColor,
+          }}
+        >
+          {IconComponent}
+          {image && <Image style={styles.image} source={image} />}
+
           <View style={styles.textContainer}>
             <Text style={styles.title}>{title}</Text>
-            <Text style={styles.subTitle}>{subTitle}</Text>
+            {subTitle && <Text style={styles.subTitle}>{subTitle}</Text>}
           </View>
         </View>
       </TouchableHighlight>
@@ -33,11 +45,7 @@ const AppListItem = ({
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 20,
-  },
+  container: {},
   image: {
     width: 70,
     height: 70,
@@ -50,6 +58,7 @@ const styles = StyleSheet.create({
     paddingBottom: 3,
     color: colors.darkGrey,
     fontWeight: "500",
+    justifyContent: "center",
   },
   subTitle: {
     color: colors.mediumGrey,
