@@ -15,40 +15,16 @@ import ListingScreen from "./app/screens/ListingScreen";
 import AppTextInput from "./app/components/AppTextInput/AppTextInput";
 import AppPicker from "./app/components/AppPicker/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
-
-// const itemsData = [
-//   {
-//     label: "Furniture",
-//     value: 1,
-//   },
-//   {
-//     label: "Clothing",
-//     value: 2,
-//   },
-//   {
-//     label: "Cameras",
-//     value: 3,
-//   },
-// ];
+import RegisterScreen from "./app/screens/RegisterScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 const App = () => {
-  // const [cat, setCat] = useState(itemsData[0]);
   // const [isNew, setIsNew] = useState(false);
   {
     /* <Switch value={isNew} onValueChange={(value) => setIsNew(value)} /> */
   }
 
-  {
-    /* <AppPicker
-        selectedItem={cat}
-        onSelectItem={(item) => setCat(item)}
-        placeholder="test"
-        icon="apps"
-        items={itemsData}
-      />
-      <AppTextInput placeholder="test" icon="email" /> */
-  }
-  return <LoginScreen />;
+  return <ListingEditScreen />;
 };
 
 export default App;
