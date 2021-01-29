@@ -17,13 +17,9 @@ import AppPicker from "./app/components/AppPicker/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
+import AppFormPicker from "./app/components/Forms/AppFormPicker/AppFormPicker";
 
 const App = () => {
-  // const [isNew, setIsNew] = useState(false);
-  {
-    /* <Switch value={isNew} onValueChange={(value) => setIsNew(value)} /> */
-  }
-
   return <ListingEditScreen />;
 };
 

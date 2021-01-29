@@ -3,7 +3,9 @@ import { Image, StyleSheet } from "react-native";
 import * as yup from "yup";
 
 import AppScreen from "../components/AppScreen/AppScreen";
-import { AppForm, AppFormField, AppSubmitButton } from "../components/Forms";
+import AppForm from "../components/Forms/AppForm/AppForm";
+import AppFormField from "../components/Forms/AppFormField/AppFormField";
+import AppSubmitButton from "../components/Forms/AppSubmitButton/AppSubmitButton";
 
 const validationSchema = yup.object().shape({
   email: yup.string().required().email().label("Email"),

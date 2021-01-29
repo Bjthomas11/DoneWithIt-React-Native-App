@@ -2,13 +2,11 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 
-import {
-  AppForm,
-  AppFormField,
-  AppFormPicker,
-  AppSubmitButton,
-} from "../components/Forms";
-import Screen from "../components/AppScreen/AppScreen";
+import AppScreen from "../components/AppScreen/AppScreen";
+import AppForm from "../components/Forms/AppForm/AppForm";
+import AppFormField from "../components/Forms/AppFormField/AppFormField";
+import AppFormPicker from "../components/Forms/AppFormPicker/AppFormPicker";
+import AppSubmitButton from "../components/Forms/AppSubmitButton/AppSubmitButton";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -20,12 +18,12 @@ const validationSchema = Yup.object().shape({
 const categories = [
   { label: "Furniture", value: 1 },
   { label: "Clothing", value: 2 },
-  { label: "Camera", value: 3 },
+  { label: "Electronics", value: 3 },
 ];
 
 const ListingEditScreen = () => {
   return (
-    <Screen style={styles.container}>
+    <AppScreen style={styles.container}>
       <AppForm
         initialValues={{
           title: "",
@@ -36,28 +34,31 @@ const ListingEditScreen = () => {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        <AppFormField maxLength={255} name="title" placeholder="Title" />
+        <AppFormField maxLength={25} name="title" placeholder="Title" />
         <AppFormField
           keyboardType="numeric"
           maxLength={8}
           name="price"
           placeholder="Price"
         />
+
+        <AppFormField
+          maxLength={25}
+          multiline
+          numberOfLines={3}
+          name="description"
+          placeholder="Description"
+        />
+
         <AppFormPicker
           items={categories}
           name="category"
           placeholder="Category"
         />
-        <AppFormField
-          maxLength={255}
-          multiline
-          name="description"
-          numberOfLines={3}
-          placeholder="Description"
-        />
-        <AppSubmitButton title="Post" />
+
+        <AppSubmitButton title="Post It!" />
       </AppForm>
-    </Screen>
+    </AppScreen>
   );
 };
 
