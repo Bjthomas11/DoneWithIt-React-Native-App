@@ -55,22 +55,23 @@ const AppPicker = ({
       <Modal visible={modal} animationType="slide">
         <AppScreen>
           <Button title="close" onPress={() => setModal(false)} />
+
+          <FlatList
+            numColumns={numberOfColumns}
+            data={items}
+            keyExtractor={(item) => item.value.toString()}
+            renderItem={({ item }) => (
+              <PickerItemComponent
+                item={item}
+                label={item.label}
+                onPress={() => {
+                  setModal(false);
+                  onSelectItem(item);
+                }}
+              />
+            )}
+          />
         </AppScreen>
-        <FlatList
-          numColumns={numberOfColumns}
-          data={items}
-          keyExtractor={(item) => item.value.toString()}
-          renderItem={({ item }) => (
-            <PickerItemComponent
-              item={item}
-              label={item.label}
-              onPress={() => {
-                setModal(false);
-                onSelectItem(item);
-              }}
-            />
-          )}
-        />
       </Modal>
     </>
   );
