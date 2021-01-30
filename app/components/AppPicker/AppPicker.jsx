@@ -5,7 +5,7 @@ import {
   Modal,
   StyleSheet,
   TouchableWithoutFeedback,
-  View,
+  View
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -20,13 +20,14 @@ const AppPicker = ({
   items,
   selectedItem,
   onSelectItem,
+  width = "100%"
 }) => {
   const [modal, setModal] = useState(false);
 
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModal(true)}>
-        <View style={styles.container}>
+        <View style={[styles.container, { width }]}>
           {icon && (
             <MaterialCommunityIcons
               name={icon}
@@ -76,20 +77,19 @@ const styles = StyleSheet.create({
     backgroundColor: defaultStyles.colors.lightGrey,
     borderRadius: 25,
     flexDirection: "row",
-    width: "100%",
     padding: 15,
-    marginVertical: 10,
+    marginVertical: 10
   },
   icon: {
-    marginRight: 15,
+    marginRight: 15
   },
   text: {
-    flex: 1,
+    flex: 1
   },
   placeholder: {
     color: defaultStyles.colors.mediumGrey,
-    flex: 1,
-  },
+    flex: 1
+  }
 });
 
 export default AppPicker;

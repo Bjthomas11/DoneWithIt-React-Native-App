@@ -20,7 +20,7 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 import AppFormPicker from "./app/components/Forms/AppFormPicker/AppFormPicker";
 
 const App = () => {
-  return <MessagesScreen />;
+  return <ListingEditScreen />;
 };
 
 export default App;
