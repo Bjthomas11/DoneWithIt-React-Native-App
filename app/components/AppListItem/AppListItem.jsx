@@ -1,43 +1,45 @@
-import React from "react";
-import {
-  Image,
-  Text,
-  StyleSheet,
-  View,
-  TouchableHighlight,
-} from "react-native";
+import React, { useState } from "react";
+import { Image, StyleSheet, View, TouchableHighlight } from "react-native";
 import Swipeable from "react-native-gesture-handler/Swipeable";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../../config/colors";
-import AppIcon from "../AppIcon/AppIcon";
+import AppText from "../AppText/AppText";
 
 const AppListItem = ({
   title,
   subTitle,
   image,
   onPress,
-  renderRightActions,
   IconComponent,
-  backgroundColor = "#fff",
+  renderRightActions,
 }) => {
+  const [showChevrons, setShowChevrons] = useState(true);
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight onPress={onPress} underlayColor={colors.lightGrey}>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 20,
-            backgroundColor: backgroundColor,
-          }}
-        >
+        <View style={styles.container}>
           {IconComponent}
           {image && <Image style={styles.image} source={image} />}
 
           <View style={styles.textContainer}>
-            <Text style={styles.title}>{title}</Text>
-            {subTitle && <Text style={styles.subTitle}>{subTitle}</Text>}
+            <AppText style={styles.title} numberOfLines={1}>
+              {title}
+            </AppText>
+            {subTitle && (
+              <AppText style={styles.subTitle} numberOfLines={2}>
+                {subTitle}
+              </AppText>
+            )}
           </View>
+          {showChevrons && (
+            <MaterialCommunityIcons
+              name="chevron-right"
+              size={25}
+              color={colors.mediumGrey}
+              style={styles.icon}
+            />
+          )}
         </View>
       </TouchableHighlight>
     </Swipeable>
@@ -45,7 +47,12 @@ const AppListItem = ({
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 20,
+    backgroundColor: colors.white,
+  },
   image: {
     width: 70,
     height: 70,
@@ -53,6 +60,7 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     marginLeft: 10,
+    flex: 1,
   },
   title: {
     paddingBottom: 3,

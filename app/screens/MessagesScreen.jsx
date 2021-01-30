@@ -9,14 +9,14 @@ import ListItemSeperator from "../components/ListItemSeperator/ListItemSeperator
 const initialMessages = [
   {
     id: 1,
-    title: "title",
-    description: "desc",
+    title: "Brian Thomas",
+    description: "Hi! Is this still available?",
     image: require("../assets/brian.jpg"),
   },
   {
     id: 2,
-    title: "title 2",
-    description: "desc 2",
+    title: "Brian Thomas",
+    description: "I'm interested in this. When will you be able to post it?",
     image: require("../assets/brian.jpg"),
   },
 ];

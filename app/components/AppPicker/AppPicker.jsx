@@ -86,6 +86,10 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
   },
+  placeholder: {
+    color: defaultStyles.colors.mediumGrey,
+    flex: 1,
+  },
 });
 
 export default AppPicker;

@@ -42,18 +42,18 @@ const ListingEditScreen = () => {
           placeholder="Price"
         />
 
+        <AppFormPicker
+          items={categories}
+          name="category"
+          placeholder="Category"
+        />
+
         <AppFormField
           maxLength={25}
           multiline
           numberOfLines={3}
           name="description"
           placeholder="Description"
-        />
-
-        <AppFormPicker
-          items={categories}
-          name="category"
-          placeholder="Category"
         />
 
         <AppSubmitButton title="Post It!" />
