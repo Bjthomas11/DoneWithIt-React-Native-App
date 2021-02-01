@@ -1,40 +1,26 @@
-import React, { useState, useEffect } from "react";
-import * as ImagePicker from "expo-image-picker";
-
+import React, { useState } from "react";
 import AppScreen from "./app/components/AppScreen/AppScreen";
 
-import { Button, Image } from "react-native";
-import AppImageInput from "./app/components/AppImageInput/AppImageInput";
+import AppImageInputList from "./app/components/AppImageListInput/AppImageInputList";
 
 const App = () => {
-  const [imageURI, setImageURI] = useState();
-  const requestPermission = async () => {
-    const result = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!result.granted) {
-      alert("Sorry, we need camera roll permissions to make this work!");
-    }
-  };
+  const [imageURIs, setImageURIs] = useState([]);
 
-  useEffect(() => {
-    requestPermission();
-  }, []);
+  const handleAdd = uri => {
+    setImageURIs([...imageURIs, uri])
+  }
 
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.cancelled) {
-        setImageURI(result.uri);
-      }
-    } catch (error) {
-      console.log(`Error loading image: ${error}`);
-    }
-  };
+  const handleRemove = uri => {
+    setImageURIs(imageURIs.filter(imageURI => imageURI !== uri))
+  }
+  
 
   return (
     <AppScreen>
-      <AppImageInput
-        imageURI={imageURI}
-        onChangeImage={(uri) => setImageURI(uri)}
+      <AppImageInputList
+        imageURIs={imageURIs}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
       />
     </AppScreen>
   );
