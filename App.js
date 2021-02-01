@@ -1,26 +1,43 @@
-import React, { useState } from "react";
-import { View, StyleSheet, Text, TextInput, Switch } from "react-native";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import AppText from "./app/components/AppText/AppText";
-import AppButton from "./app/components/AppButton/AppButton";
-import AppCard from "./app/components/AppCard/AppCard";
-import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
-import MessagesScreen from "./app/screens/MessagesScreen";
-import MyAccountScreen from "./app/screens/MyAccountScreen";
+import React, { useState, useEffect } from "react";
+import * as ImagePicker from "expo-image-picker";
+
 import AppScreen from "./app/components/AppScreen/AppScreen";
-import AppIcon from "./app/components/AppIcon/AppIcon";
-import AppListItem from "./app/components/AppListItem/AppListItem";
-import ListingScreen from "./app/screens/ListingScreen";
-import AppTextInput from "./app/components/AppTextInput/AppTextInput";
-import AppPicker from "./app/components/AppPicker/AppPicker";
-import LoginScreen from "./app/screens/LoginScreen";
-import RegisterScreen from "./app/screens/RegisterScreen";
-import ListingEditScreen from "./app/screens/ListingEditScreen";
-import AppFormPicker from "./app/components/Forms/AppFormPicker/AppFormPicker";
+
+import { Button, Image } from "react-native";
+import AppImageInput from "./app/components/AppImageInput/AppImageInput";
 
 const App = () => {
-  return <ListingEditScreen />;
+  const [imageURI, setImageURI] = useState();
+  const requestPermission = async () => {
+    const result = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!result.granted) {
+      alert("Sorry, we need camera roll permissions to make this work!");
+    }
+  };
+
+  useEffect(() => {
+    requestPermission();
+  }, []);
+
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      if (!result.cancelled) {
+        setImageURI(result.uri);
+      }
+    } catch (error) {
+      console.log(`Error loading image: ${error}`);
+    }
+  };
+
+  return (
+    <AppScreen>
+      <AppImageInput
+        imageURI={imageURI}
+        onChangeImage={(uri) => setImageURI(uri)}
+      />
+    </AppScreen>
+  );
 };
 
 export default App;
